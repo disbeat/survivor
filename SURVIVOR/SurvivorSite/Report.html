@@ -1,0 +1,432 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Survivor</title>
+<style type="text/css"> 
+<!-- 
+body  {
+	font: 100% Verdana, Arial, Helvetica, sans-serif;
+	background: #666666;
+	margin: 0; /* it's good practice to zero the margin and padding of the body element to account for differing browser defaults */
+	padding: 0;
+	text-align: center; /* this centers the container in IE 5* browsers. The text is then set to the left aligned default in the #container selector */
+	color: #000000;
+}
+
+/* Tips for Elastic layouts 
+1. Since the elastic layouts overall sizing is based on the user's default fonts size, they are more unpredictable. Used correctly, they are also more accessible for those that need larger fonts size since the line length remains proportionate.
+2. Sizing of divs in this layout are based on the 100% font size in the body element. If you decrease the text size overall by using a font-size: 80% on the body element or the #container, remember that the entire layout will downsize proportionately. You may want to increase the widths of the various divs to compensate for this.
+3. If font sizing is changed in differing amounts on each div instead of on the overall design (ie: #sidebar1 is given a 70% font size and #mainContent is given an 85% font size), this will proportionately change each of the divs overall size. You may want to adjust based on your final font sizing.
+*/
+.twoColElsLtHdr #container { 
+	width: 1024px;  /* this width will create a container that will fit in an 800px browser window if text is left at browser default font sizes */
+	background: #FFFFFF;
+	margin: 0 auto; /* the auto margins (in conjunction with a width) center the page */
+	border: 1px solid #000000;
+	text-align: left; /* this overrides the text-align: center on the body element. */
+} 
+.twoColElsLtHdr #header { 
+	background: #DDDDDD; 
+	padding: 0 10px;  /* this padding matches the left alignment of the elements in the divs that appear beneath it. If an image is used in the #header instead of text, you may want to remove the padding. */
+} 
+.twoColElsLtHdr #header h1 {
+	margin: 0; /* zeroing the margin of the last element in the #header div will avoid margin collapse - an unexplainable space between divs. If the div has a border around it, this is not necessary as that also avoids the margin collapse */
+	padding: 10px 0; /* using padding instead of margin will allow you to keep the element away from the edges of the div */
+}
+
+/* Tips for sidebar1:
+1. Be aware that if you set a font-size value on this div, the overall width of the div will be adjusted accordingly.
+2. Since we are working in ems, it's best not to use padding on the sidebar itself. It will be added to the width for standards compliant browsers creating an unknown actual width. 
+3. Space between the side of the div and the elements within it can be created by placing a left and right margin on those elements as seen in the ".twoColElsLtHdr #sidebar1 p" rule.
+*/
+.twoColElsLtHdr #sidebar1 {
+	float: left; 
+	width: 12.5em; /* since this element is floated, a width must be given */
+	background: #EBEBEB; /* the background color will be displayed for the length of the content in the column, but no further */
+	padding: 15px 0; /* top and bottom padding create visual space within this div */
+}
+.twoColElsLtHdr #sidebar1 h3, .twoColElsLtHdr #sidebar1 p {
+	margin-left: 10px; /* the left and right margin should be given to every element that will be placed in the side columns */
+	margin-right: 10px;
+}
+
+/* Tips for mainContent:
+1. If you give this #mainContent div a font-size value different than the #sidebar1 div, the margins of the #mainContent div will be based on its font-size and the width of the #sidebar1 div will be based on its font-size. You may wish to adjust the values of these divs.
+2. The space between the mainContent and sidebar1 is created with the left margin on the mainContent div.  No matter how much content the sidebar1 div contains, the column space will remain. You can remove this left margin if you want the #mainContent div's text to fill the #sidebar1 space when the content in #sidebar1 ends.
+3. To avoid float drop, you may need to test to determine the approximate maximum image/element size since this layout is based on the user's font sizing combined with the values you set. However, if the user has their browser font size set lower than normal, less space will be available in the #mainContent div than you may see on testing.
+4. In the Internet Explorer Conditional Comment below, the zoom property is used to give the mainContent "hasLayout." This avoids several IE-specific bugs that may occur.
+*/
+.twoColElsLtHdr #mainContent {
+	margin: 0 1.5em 0 13em; /* the right margin can be given in ems or pixels. It creates the space down the right side of the page. */
+	text-align:justify;
+} 
+.twoColElsLtHdr #footer { 
+	padding: 0 10px; /* this padding matches the left alignment of the elements in the divs that appear above it. */
+	background:#DDDDDD;
+	text-align:right;
+} 
+.twoColElsLtHdr #footer p {
+	margin: 0; /* zeroing the margins of the first element in the footer will avoid the possibility of margin collapse - a space between divs */
+	padding: 10px 0; /* padding on this element will create space, just as the the margin would have, without the margin collapse issue */
+	size:3;
+}
+
+/* Miscellaneous classes for reuse */
+.fltrt { /* this class can be used to float an element right in your page. The floated element must precede the element it should be next to on the page. */
+	float: right;
+	margin-left: 8px;
+}
+.fltlft { /* this class can be used to float an element left in your page */
+	float: left;
+	margin-right: 8px;
+}
+.clearfloat { /* this class should be placed on a div or break element and should be the final element before the close of a container that should fully contain a float */
+	clear:both;
+    height:0;
+    font-size: 1px;
+    line-height: 0px;
+}
+--> 
+</style><!--[if IE]>
+<style type="text/css"> 
+/* place css fixes for all versions of IE in this conditional comment */
+.twoColElsLtHdr #sidebar1 { padding-top: 30px; }
+.twoColElsLtHdr #mainContent { zoom: 1; padding-top: 15px; }
+/* the above proprietary zoom property gives IE the hasLayout it needs to avoid several bugs */
+</style>
+<![endif]--></head>
+
+<body class="twoColElsLtHdr">
+
+<div id="container">
+  <div id="header">
+    <h1>Survivor Project</h1>
+  <!-- end #header --></div>
+  <div id="sidebar1">
+    <a href="#arquSistema">Arquitectura do Sistema</a><br />
+   <a href="#analiseDesign">Análise e Design</a><br />
+   <a href="#tasks">Tasks</a><br />
+   <a href="#design">Design</a><br />
+   <a href="#ontologia">Ontologia</a><br />
+   <a href="#InterfaceGrafica">Interface da Aplicação</a><br />
+   <a href="#OrganizacaoCodigo">Organização do Código</a><br />
+   <a href="#conclusao">Conclusão</a><br />
+   <a href="#refs">Referências</a><br />
+  </div>
+  <div id="mainContent" >
+    <h1>Apresentação do Projecto</h1>
+    <p>O Survivor é um simulador de uma sociedade multi-agente que tem como objectivo testar as formas de acção de uma sociedade 
+    num determinado ambiente no sentido de evitar a sua extinção.</p>
+    <p>O simulador implementa um sistema não hierárquico. Isto é, não existe no sistema um agente que cordena os restantes. A ideia 
+      é que os agentes tenham tarefas bem definidas e sejam capazes de tomar decisões não só a nivel individual mas em prol da sociedade.<br />
+    </p>
+    <p>&nbsp;</p>
+    <h2 id="arquSistema"> Arquitectura do Sistema</h2>
+    <p>O sistema está arquitecturado num &quot;mundo&quot; (ambiente) que contém recursos de diversos tipos. Este mundo é habitado por agentes com diversas 
+      funções. Existe uma base no mundo que representa a &quot;casa&quot; dos agentes. É nesta casa que os agentes armazenam recursos, comunicam (assincronamente, deixando informação na base que agentes mais tarde podem
+    consultar) e criam novos agentes.</p>
+    <p>O ambiente/mundo é estático, no sentido em que não aparecem novos recursos ao longo do tempo. No entanto, os recursos existentes vão desaparecendo à medida que vão sendo consumidos. Partimos também do 
+    pressuposto que os agentes podem navegar por todo o ambiente, não havendo caminhos fixos para permitir a deslocação dos mesmos. O ambiente é 
+      limitado, sendo um &quot;quadrado&quot; de dimensão fixa. Para navegação, um agente pode avançar para qualquer uma das 8 casas que rodeiam a em que se encontra.<br />
+    </p>
+    <p>Para um agente interagir com um recurso tem que se encontrar na mesma casa que este. O mesmo acontece com a interacção com a base. Os agentes têm assim visão 
+      limitada do mundo, conhecendo apenas o estado da casa onde se encontram e das casas que o rodeiam.</p>
+    <h3>Agentes</h3>
+	
+	<p>Existem 2 tipos de agentes:<br />
+    <ul><li>Seeker</li><br />
+    <li>Gatherer</li></ul></p>
+    <p>Agentes do tipo seeker são responsáveis por procurar recursos. Agentes do tipo gatherer são responsáveis pela colheita dos recursos e o seu transporte
+      para a base.<br />
+      <br />
+      Existem 3 tipos de gatherers:<br />
+      - Lamberjack: Agente responsável por colher madeira e transportá-la para a base.<br />
+      - Miner: Semelhante ao anterior, mas para pedra.<br />
+      - Hunter: Semelhante, mas para comida.<br />
+  <br />
+      Cada agente tem ainda um nível de energia associado, que é diminuindo ao longo do tempo e em função da actividade que este esteja a executar. Além disso, 
+	  os agentes do tipo Gatherer têm um workload associado, que representa a quantidade do recurso que este transporta no instante corrente.</p>
+    <p>Cada agente é responsável ainda pela sua própria alimentação, garantindo a sua sobrevivência, e pela criação e novos agentes (visto não haver um agente criador).<br />
+    Assim, pode qualquer agente decidir pela reprodução, que gera um novo utilizador. O tipo do novo utilizador é gerado arbitráriamente em função das necessidades da civilização.</p>
+	
+	<br />
+	<p>Além dos agentes acima referidos, existe ainda o agente Base, onde são depositados os recursos da civilização e as localizações de recursos conhecidos.</p>
+	
+	<p>Existe ainda o agente World, que mantém conhecimento de todo o sistema: localização e conteúdo de resourses, agentes e da base. Este Agente serve principalmente para
+	disponibilização para a interface gráfica e para dar info aos agentes quando eles procuram recursos pelo mundo (num dado raio de visao dos agentes).</p>
+	
+    <a href="#top"><p align="right" t> voltar ao topo</p></a>
+    <p>&nbsp;</p>
+<h2 id="analiseDesign">Análise e Design</h2>
+    <p>Para a análise e design do sistema utilizámos a metodologia MAzE, que nos permitiu, de forma estruturada, fazer este processo de forma sustentada.<br />
+    </p>
+    <h3>1 - Objectivos</h3>
+    <p> O diagrama seguinte especifica a hierarquia de objectivos que o sistema pretende alcançar. Centra-se no Objectivo Base, que é a sobrevivência, e 
+    divide-se nos sub-objectivos que nos permitem atingir este.    
+    <p><br />
+      <br />
+       <p align="center">
+      <img src="images/GoalDiagram.jpg" height="405" width="787" alt="GoalDiagram" /><br />
+     Figura 1 - Diagrama de Objectivos</p><br />
+      <p>Identificamos claramente no diagrama acima dois sub-objectivos principais: Manter o nível de energia e aumentar a população. Para o nível de energia,
+      é essencial comer, que é a acção que restitui energia a um agente. Desta forma, o &quot;gathering&quot; de comida é também um sub-objectivo deste.<br />
+      <br />
+      No outro lado temos a criação de agentes, que precisa dos restantes recursos (madeira e pedra). Desta forma, temos o &quot;gathering&quot; destes recursos como
+      sub-objectivo da criação de agentes.
+      <a href="#top"><p align="right" t> voltar ao topo</p></a>
+      <p>&nbsp;</p>
+      <p><br />
+      </p>
+    <h3>2 - Casos de Uso</h3></p>
+    Outro conseguimos extrair alguns casos de uso, representantes de interacções entre entidades do sistema. Desta forma, identificámos 
+      os seguintes:<br />
+    <br />
+    - Seek Resource (no qual englobamos o Seek Food, por este ser uma especificidade relativamente à procura de recursos em geral);<br />
+    <br />
+    <p align="center">
+    <img src="images/seekResource.jpg" width="573" height="416" alt="seek resource diagram" /><br />
+    Figura 2 - Diagrama de Sequência para o caso de uso Seek Resource</p><br />
+    <br />
+    - Gather Resource (no qual englobamos o Gather Food, por este também neste caso ser uma especificidade);<br />
+    <br /> <p align="center">
+    <img src="images/gatherResource.jpg" width="556" height="576" alt="gather resource diagram" /><br />
+   Figura 3 - Diagrama de Sequência para o caso de uso Gather Resource</p><br />
+      <br />
+      - Eat (o consumo de comida e respectivo aumento de energia);<br />
+      <br /><p align="center">
+      <img src="images/eat.jpg" width="415" height="326" alt="eat diagram" /><br />
+      Figura 4 - Diagrama de Sequência para o caso de uso Eat</p><br />
+      <br />
+    </p>
+    <p><br />
+      - Create Agent (a criação de um novo agente).<br />
+      <br /><p align="center">
+      <img src="images/createAgent.jpg" width="758" height="556" alt="create agent" /><br />
+      Figura 5 - Diagrama de Sequência para o caso de uso Create Agent</p>
+    <a href="#top"><p align="right" t> voltar ao topo</p></a>
+      <br />
+    </p>
+    <h3>3 - Papeis</h3></p>
+    <p>Identificámos quatro papeis principais no nosso projecto:<br />
+      <br /> <p align="center">
+      <img src="images/RoleDiagram.jpg" width="708" height="606" alt="role diagram" /><br />
+   Figura 6 - Diagrama de Papeis</p></p>
+    Estes quatro papeis são necessários para atingir todas as folhas da nossa árvore de objectivos, o que faz com que a complete totalmente.    <a href="#top"><p align="right" t> voltar ao topo</p></a>
+    <p>&nbsp;</p><h2 id="tasks"> Tasks</h2>
+    <p>    A cada role temos associada uma tarefa, que é executada em representação do papel:</p>
+    <p><br /><p align="center">
+      <img src="images/EatTask.jpg" width="624" height="204" alt="eat task" /><br />
+    Figura 7 - Diagrama de Tarefas para o papel Eat</p>
+    <p>Esta tarefa representa o papel de comer.<br />
+      <br /><p align="center">
+      <img src="images/SeekResourceTask.jpg" width="689" height="204" alt="seek task diagram" /><br />
+    Figura 8 - Diagrama de Tarefas para o papel Seek Resource</p>
+      <br />
+      <br />
+      Esta tarefa representa o papel de Seek Resource.<br />
+      <br />
+      <br /><p align="center">
+      <img src="images/GatherResourceTask.jpg" width="788" height="195" alt="gather task" /><br />
+      Figura 9 - Diagrama de Tarefas para o papel Gather Resource</p>
+      <br />
+      Esta tarefa representa o papel de Gather Resource.<br />
+      <br />
+      <br />
+      <br /> <p align="center">
+      <img src="images/CreateAgentTask.jpg" width="637" height="228" alt="cretate agent task" /><br />
+     Figura 10 - Diagrama de Tarefas para o papel Create Agent</p>
+      <br />
+      Esta tarefa representa o papel de Seek Resource.<br />
+      <br />
+      <br />
+      Os agentes que definiremos no nosso ambiente serão responsáveis por executar estas tarefas, em função dos papeis que desempenharem.
+      <br />
+    <a href="#top"><p align="right" t> voltar ao topo</p></a>
+      <p><br />
+      </p>
+<h2 id="design"> DESIGN</h2></p>
+    </p>
+    <h3>4 - Classes de Agentes</h3>
+    <p>      A partir dos papeis que existem no mundo, definimos agentes necessários para desempenhar os papeis existentes. Assim, estes são os agentes definidos
+      com base nessa estrutura:<br />
+      <br />
+    <p align="center">
+      <img src="images/AgentDiagram.jpg" width="395" height="273" alt="agent diagram" /><br />
+      Figura 11 - Diagrama de Agentes</p>
+      <br />
+      <br />
+      Estes são os agentes que desempenham os papeis definidos para os objectivos. No entanto, há agentes que interagem no processo que, sem desempenhar nenhum
+      papel específico, existem no nosso sistema. No diagrama de classes que apresentamos de seguida temos consciência desses agentes, por exemplo no caso do
+      agente base, com o qual são feitas bastantes interacções mas este não representa um role específico, em função dos objectivos.</p><a href="#top"><p align="right" t> voltar ao topo</p></a>
+    </p>
+    <h3>5 - Diagrama de Classes</h3>
+    <p>Aqui apresentamos o nosso diagrama de classes de alto nível. Neste caso podemos ver as classes auxiliares como resources e afins que são essenciais para o
+      nosso mundo.<br />
+      <br /><p align="center">
+      <img src="images/AgentClassDiagram.png" width="737" height="360" alt="agent class diagram" /><br />
+      Figura 12 - Diagrama de Classes</p>
+      <br />
+      Aqui já conseguimos ver as entidades do nosso sistema e as suas relações. Assim temos um mundo com uma lista de agentes, outra de resources e uma base. 
+      Os Resources podem ser Wood, Food e Stone, e mantém a posição onde se encontram e a respectiva quantidade.Os agentes podem ser do tipo Gatherer ou Seeker, 
+      onde os Gatherers são Hunters, Miners ou Lamberjacks. O Seeker tem aínda uma lista de Resources, que representam os resources que este encontra e envia 
+      depois para a Base. A Base tem um Resource de cada tipo (Wood, Food e Stone) que representam os resources gerais da sociedade.<br />
+    </p>
+    <a href="#top"><p align="right" t> voltar ao topo</p></a>
+    </p>
+    <h3>6 - Configuração do Sistema</h3>
+    <p>A imagem abaixo apresenta a configuração geral do nosso sistema. Nela podemos ver a Base no centro do mundo. Temos vários resources espalhados pelo mundo,
+    de diferentes tipos. </p>
+    <p>Vimos também os diferentes agentes no mundo:<br />
+      - Temos n Seekers (neste caso 2) que andam pelo mundo à procura de resources;<br />
+      - Um Miner a recolher pedra num resource desse tipo;<br />
+      - Um Hunter a recolher comida num resource do tipo Food;<br />
+      - Os restantes agentes na base.<br />
+      <br />
+      <p align="center">
+      <img src="images/DeploymentDiagram.png" width="607" height="493" alt="deployment diagram" /><br />
+      Figura 13 - Diagrama de Configuração do Sistema</p>
+      <br />
+	  <p>A configuração usada na apresentação final apresentava um mundo quadrado com 51 "células" de lado. Inicializámos o mundo com 5 seekers, 2 hunters, 1 lumberjack e 1 miner.
+		Quanto aos recurso, colocámos distribuidos aleatóreamente pelo mundo  10 recursos de cada tipo, com um valor de quantidade de 200 cada.<br />
+		A base, colocada no centro do mapa, inicialmente começa com quantidade 1000 de cada recurso. Inicialmente, a quantidade de resources que ela conhece a localização é 0. Este valor incrementa sempre que
+		um seeker reporta um recurso encontrado.
+	  
+    <a href="#top"><p align="right" t> voltar ao topo</p></a>
+    </p><h2 id="ontologia">Ontologia</h2></p>
+    Uma ontologia representa, talvez da melhor forma, o conhecimento de um sistema. Abaixo apresentamos alguns diagramas da ontologia representativa do nosso
+      sistema, mostrando a Hierarquia de Classes e um Grafo de Propriedades Partilhadas pelas diferentes classes da ontologia.<br />
+    <p align="center"><img src="images/HieraquiaClasses.jpg" width="788" height="509" alt="class hieararchy" /><br />
+    Figura 14 - Diagrama de Hierarquia de Classes na Ontologia
+      <br />
+      <br />
+      <img src="images/GrafoPropriedadePartilhadas.jpg" width="780" height="473" alt="proprities grafo" /><br />
+      Figura 15 - Grafo de Propriedades Partilhadas pelas Classes da Ontologia
+    </p>
+    <p>Estes diagramas demonstram de uma forma mais visual a extruturação do conhecimento do nosso sistema. É neste formato que o conhecimento vai ser armazenado
+    e tratado por este.</p>
+    <p><a href="ontologia/ontologia.zip">Obter ontologia</a>    </p>
+	
+	<h3>Ontologia para Comunicação</h3>
+	
+	<br />
+	<p>Utilizamos ainda ontologia na comunicação dos agentes por mensagens FIPA. Nessa Ontologia representamos pedidos de informação ("existem recursos na localização x?", por exemplo), 
+	passagem de informação ("Encontrei este recurso nesta posição") ou pedidos de acção ("Reproduz")</p><br />
+	
+	<p>O vocabolário representa os diferentes conceitos, predicados e acções utilizados na ontologia:</p>
+	
+	<p>
+	
+	ONTOLOGY_NAME = "SurvivalOntology";<br />
+	<br />
+	//Concepts<br />
+	LOCATION<br />
+	RESOURCE<br />
+	FOOD<br />
+	STONE <br />
+	WOOD <br />
+	PERSON <br />
+	BASE <br />
+	<br />
+	//Slots<br />
+	XPOS<br />
+	YPOS <br />
+	AMOUNT <br />
+	REMAINING <br />
+	SEEN_RESOURCES <br />
+	ENERGY <br />
+	PERSON_LOCATION <br />
+	WORKLOAD <br />
+	TYPE <br />
+	<br />
+	//Predicates<br />
+	RESOURCE_IS_LOCATED <br />
+	IS_LOCATED_RESOURCE<br />
+	IS_LOCATED_LOCATION <br />
+	<br />
+	//Actions<br />
+	REQUEST_FOOD<br />
+	REQUEST_FOOD_RESPONSE <br />
+	REQUEST_SEEN_RESOURCES <br />
+	REQUEST_SEEN_RESOURCES_RESPONSE <br />
+	REQUEST_RESOURCE_OF_LOCATION<br />
+	REQUEST_RESOURCE_OF_LOCATION_RESPONSE <br />
+	SEND_AGENT_INFO<br />
+	SEND_BASE_INFO <br />
+	SEND_FOUND_RESOURCES <br />
+	REQUEST_RESOURCE_AMOUNT_OF_LOCATION <br />
+	REQUEST_RESOURCE_AMOUNT_OF_LOCATION_RESPONSE <br />
+	UPDATE_BASE_RESOURCES <br />
+	REPRODUCE <br />
+	</p>
+	
+	<p>A utilização de ontologia na comunicação aumentou o grau de dificuldade na implementação, mas permitiu um desenvolvimento mais orientado ao conhecimento
+	e descentralizado</p>
+    <a href="#top"><p align="right" t> voltar ao topo</p></a>
+    <h2 id="InterfaceGrafica">Interface Gráfica</h3>
+    <p>
+		Para a execução do projecto foi necessário implementar um agente World, já descrito anteriormente. Este agente não tem qualquer poder de decisão. Apenas fornece informação sobre recursos quando tal lhe é pedida pelos agentes.</p>
+	<p>Para isso o World contém toda a informação do jogo, como a localização dos recursos, dos agentes e da base. Este agente tem o único propósito de possuir os dados actualizados do mundo para a comunicação com a interface gráfica e responder, quando requerido por outros agentes, sobre informação sobre o ambiente.</p>
+	<p>A GUI (Graphical User Interface) foi criada a pensar na representação simples e funcional do programa. Assim sendo está representado neste os vários agentes, os recursos no mundo e a base (headquarters). Foi desenvolvido em Java com recurso à ferramenta Slick, que é uma biblioteca de desenvolvimento de jogos 2D baseado no LWJGL - Lightweight Java Game Library. Através desta ferramenta foi possível a implementação elementar da nossa simulação.</p>
+	<p>O Slick é um sistema muito simples e relativamente fácil de implementar, contendo 3 funções principais: a init, onde se colocam a inicializações iniciais dos dados; a render, que trata do desenho dos elementos; e a função update, onde é tratada toda a lógica do jogo.</p>
+	<p>No nosso caso, na função update encontram-se alguns mecanismos de sincronização com os recursos e com os agentes existentes no mundo, para posterior actualização na interface gráfica do utilizador.</p>
+	<p>Toda o grafismo é baseado em formas geométricas simples e imagens/texturas.</p>
+	<img src="images/interface.jpg" /><br />
+	Figura 16 - Exemplo de vizualização gráfica
+	
+	<p>Como é possível ver na Figura 16, temos os vários seekers, que são as personagens amarelas, os hunters, que são vermelhos, os lumberjack's, os azuis e os miners que se encontram a cinzento. Na parte inferior do ecrã podemos encontrar várias informações da nossa simulação, concretamente a quantidade de recursos na base e a quantidade de agentes de cada tipo no mundo.</p>
+	<p>Quanto aos recursos, é possível ver a pedra, a madeira, que é representado pelas árvores, e a ovelha que indica a existência de comida numa posição.</p>
+
+	
+	<a href="#top"><p align="right" t> voltar ao topo</p></a>
+    <h2 id="OrganizacaoCodigo">Organização do Código</h3>
+    <p>
+		O código encontra-se organizado por packages, tendo a seguinte estrutura:
+		<ul>
+		<li>survivor</li>
+		<ul>
+			<li>agents</li>
+			<li>graph</li>
+			<li>ontology</li>
+			<ul>
+				<li>actions</li>
+			</ul>
+		</ul>
+		</ul>
+		A package survivor mantém as propriedades gerais do jogo na class SurvivorProperties. <br />
+		A package agents tém as classes dos agentes, cada um com as funções especificas setup e action,
+		para inicialização e especificação das acções dos agentes.<br />
+		A package graph mantém a class da interface gráfica, responsável por desenhar todo o grafismo do jogo. <br />
+		A package Ontology mantém as classes da ontologia usada na comunicação dos agentes. Tem duas classes especiais: SurvivorVocabulary - Contém os nomes das
+		diferentes actions, concepts, slots e predicates usados na ontologia; SurvivorOntology - Intanciação da ontologia. Mantém um singleton com a mesma de forma a 
+		que seja chamado sempre objecto pelos diferentes agentes.<br />
+		A package actions mantém as classes das acções da ontologia. Esta separação foi feita apenas para simplificação estrutural.
+	</p>
+    <a href="#top"><p align="right" t> voltar ao topo</p></a>
+    <p>&nbsp;</p><h3 id="conclusao">Conclusão</h3>
+    <p>
+    Este site representa todo o processo de estruturação, análise e design do sistema implementado. A análise e design seguiram a motologia MAzE que, por 
+    estar direccionada para agentes facilitou substancialmente este processo.
+    <p>Foi desenvolvida a ontologia para gestão do conhecimento do sistema em Protegé, que contém mais estrutura que a que nos é possível apresentar por diagramas.</p>
+    <p>Numa análise critica do sitema, podemos concluir que, uma vez que os recursos são esgotáveis, a civilização acaba sempre por se extinguir. Verificámos as dificuldades da civilização não ter 
+	um lider que estabelece tarefas. O facto de cada agente poder decidir quando procriar, que comida ir buscar, sem haver alguém a fazer essa gestão com conhecimento geral leva a situações como vários agentes a irem buscar o mesmo recurso, que se esgota
+	estretanto e os restantes fizeram a viagem e voltaram de mão vazias; reproduções simultâneas, que causam um arrombo grande aos recursos da civilização; etc. Isto demonstra claramente que é difícil definir
+	comportamento de grupo com poder distribuido por todos os intervenientes, o que torna esta simulação um exercicio de análise interessante para comportamento em sociedade.</p>
+    <a href="#top"><p align="right" t> voltar ao topo</p></a>
+    <p>&nbsp;</p><h3 id="refs">Referências:</h3></p>
+    <p>Scott A. DeLoach, Mark F. Wood and Clint H. Sparkman - Multiagent Systems Engineering<br />
+      Scott A. DeLoach - Analysis and Design using MaSE and agentTool<br />
+      Russell, S. &amp; Norvig, P. (2002) Artificial Intelligence: A Modern Approach<br />
+      Project Agent Tool (http://agenttool.cis.ksu.edu/)    </p>
+<p></p>
+    <p><br />
+      <!-- end #mainContent -->
+    </p>
+  </div>
+	<!-- This clearing element should immediately follow the #mainContent div in order to force the #container div to contain all child floats --><br class="clearfloat" />
+   <div id="footer">
+    <p>Elaborado por João Lopes e Marco Simões</p>
+  <!-- end #footer --></div>
+<!-- end #container --></div>
+</body>
+</html>
